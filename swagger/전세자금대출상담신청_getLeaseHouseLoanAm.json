@@ -1,0 +1,409 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "UNOAPI Swagger Spec. JSON",
+    "version" : "1.0.0",
+    "title" : "UNOAPI"
+  },
+  "host" : "https://dopenapi.wooribank.com",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "api-list",
+    "description" : "List of APIs"
+  } ],
+  "paths" : {
+    "/oai/wb/v1/lease/getLeaseHouseLoanAm" : {
+      "post" : {
+        "tags" : [ "api-list" ],
+        "summary" : "전세자금대출상담신청",
+        "operationId" : "_oai_wb_v1_lease_getLeaseHouseLoanAm",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "appkey",
+          "in" : "header",
+          "description" : "API Key(제휴사키)",
+          "required" : false
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "인증토큰",
+          "required" : false
+        }, {
+          "name" : "itcsno",
+          "in" : "header",
+          "description" : "통합고객번호",
+          "required" : false
+        }, {
+          "name" : "ebnk_utzpe_no",
+          "in" : "header",
+          "description" : "전자뱅킹이용자번호",
+          "required" : false
+        }, {
+          "in" : "body",
+          "name" : "REQUEST",
+          "description" : "request body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_REQUEST_1k1r6sph5ykbl"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "BAD_REQUEST"
+          },
+          "404" : {
+            "description" : "NOT_FOUND"
+          },
+          "405" : {
+            "description" : "METHOD_NOT_ALLOWED"
+          },
+          "500" : {
+            "description" : "INTERNAL_SERVER_ERROR"
+          },
+          "503" : {
+            "description" : "SERVICE_UNAVAILABLE"
+          },
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_RESPONSE_1h7imnhgawchi"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_REQUEST_1k1r6sph5ykbl" : {
+      "type" : "object",
+      "required" : [ "dataBody", "dataHeader" ],
+      "properties" : {
+        "dataHeader" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_dataHeader_1jelhd91stohk"
+        },
+        "dataBody" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_dataBody_s1b56qbmec6r"
+        }
+      }
+    },
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_dataHeader_1jelhd91stohk" : {
+      "type" : "object",
+      "properties" : {
+        "UTZPE_CNCT_IPAD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속IP주소"
+        },
+        "UTZPE_CNCT_MCHR_UNQ_ID" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속기기고유ID"
+        },
+        "UTZPE_CNCT_TEL_NO_TXT" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속전화번호"
+        },
+        "UTZPE_CNCT_MCHR_IDF_SRNO" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용자접속기기식별일련번호"
+        },
+        "UTZ_MCHR_OS_DSCD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기운영체계구분코드"
+        },
+        "UTZ_MCHR_OS_VER_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기운영체계버전명"
+        },
+        "UTZ_MCHR_MDL_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "이용기기모델명"
+        },
+        "UTZ_MCHR_APP_VER_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "앱 버전"
+        }
+      },
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_dataBody_s1b56qbmec6r" : {
+      "type" : "object",
+      "properties" : {
+        "DSCD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "구분코드"
+        },
+        "CRINF_INQ_AGR_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "신용조회동의여부"
+        },
+        "PSN_INF_OFR_AGR_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "개인정보제공동의여부"
+        },
+        "PRCI_UTZ_AGR_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "개인신용정보이용동의여부"
+        },
+        "MRG_DIS" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "결혼구분"
+        },
+        "SPOU_ITCSNO" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "배우자통합고객번호"
+        },
+        "CRMS_OCPT_CD_INF_NM" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "직업코드정보명"
+        },
+        "WRLC_CRNO" : {
+          "type" : "string",
+          "example" : "12131123111",
+          "description" : "직장법인등록번호"
+        },
+        "CHIL_CN" : {
+          "type" : "number",
+          "example" : "2",
+          "description" : "자녀수"
+        },
+        "SLF_ANL_ICM_AM" : {
+          "type" : "number",
+          "example" : "67000000",
+          "description" : "본인연간소득금액"
+        },
+        "SLF_TOT_LBLT_AM" : {
+          "type" : "number",
+          "example" : "0",
+          "description" : "본인총부채금액"
+        },
+        "SPOU_ICM_AM" : {
+          "type" : "number",
+          "example" : "0",
+          "description" : "배우자소득금액"
+        },
+        "SPOU_LBLT_AM" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "배우자부채금액"
+        },
+        "ANL_ICM_XC_ESMN_CD" : {
+          "type" : "string",
+          "example" : "02",
+          "description" : "연간소득환산추정코드"
+        },
+        "CURD_MVIN_DT" : {
+          "type" : "string",
+          "example" : "20150707",
+          "description" : "현거주지전입일자"
+        },
+        "ZPCD" : {
+          "type" : "string",
+          "example" : "12032",
+          "description" : "우편번호코드"
+        },
+        "ADR_KDCD" : {
+          "type" : "string",
+          "example" : "3",
+          "description" : "주소종류코드"
+        },
+        "POST_SRNO" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "우편일련번호"
+        },
+        "BLD_MNG_NO" : {
+          "type" : "string",
+          "example" : "2121112111",
+          "description" : "건물관리번호"
+        },
+        "OBJT_SQM" : {
+          "type" : "number",
+          "example" : "88",
+          "description" : "목적물면적"
+        },
+        "OBJT_HOUS_SHAP" : {
+          "type" : "string",
+          "example" : "APT",
+          "description" : "목적물주택형태"
+        },
+        "GDOC_RQ_AM" : {
+          "type" : "number",
+          "example" : "70000000",
+          "description" : "보증서신청금액"
+        },
+        "MDBT_RQ_AM" : {
+          "type" : "number",
+          "example" : "0",
+          "description" : "주채무신청금액"
+        },
+        "MDBT_SBJ_CD" : {
+          "type" : "string",
+          "example" : "48",
+          "description" : "주채무과목코드"
+        },
+        "LON_RPY_MECD" : {
+          "type" : "string",
+          "example" : "05",
+          "description" : "여신상환방법코드"
+        },
+        "GRFE_PID_DSCD" : {
+          "type" : "string",
+          "example" : "1",
+          "description" : "보증료납입구분코드"
+        },
+        "LON_LN_XPR_DT" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "여신대출만기일자"
+        },
+        "GRN_DSCD" : {
+          "type" : "string",
+          "example" : "2P",
+          "description" : "보증구분코드"
+        },
+        "LEAS_GRN_AM" : {
+          "type" : "number",
+          "example" : "70000000",
+          "description" : "임차보증금액"
+        },
+        "MOVIN_YN_CD" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "입주여부코드"
+        },
+        "GRLMT_EXCP_CND_CD" : {
+          "type" : "string",
+          "example" : "9",
+          "description" : "보증한도예외조건코드"
+        },
+        "HSHR_CN" : {
+          "type" : "number",
+          "example" : "0",
+          "description" : "세대원수"
+        },
+        "SNGL_HSLR_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "단독세대주여부"
+        },
+        "INSU_NJNNG_YN" : {
+          "type" : "string",
+          "example" : "N",
+          "description" : "보험미가입여부"
+        },
+        "CTRD_INRMC_AFSL_YN" : {
+          "type" : "string",
+          "example" : "Y",
+          "description" : "계약서중개사날인여부"
+        },
+        "LTHR_CTR_CNF_YN_CD" : {
+          "type" : "string",
+          "example" : "1",
+          "description" : "임대차계약확인여부코드"
+        },
+        "RENPE_RSCO_ITCSNO" : {
+          "type" : "string",
+          "example" : "12121211121",
+          "description" : "임대인주민법인통합고객번호"
+        },
+        "GRLMT_PRME_TTMN_DSCD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "보증한도우대조치구분코드"
+        },
+        "MRET_GRN_AM" : {
+          "type" : "number",
+          "example" : "0",
+          "description" : "월세보증금액"
+        },
+        "LN_EXE_SCDT" : {
+          "type" : "string",
+          "example" : "20190705",
+          "description" : "대출실행예정일"
+        },
+        "PRC_DIS" : {
+          "type" : "string",
+          "example" : "0",
+          "description" : "처리구분"
+        }
+      },
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_RESPONSE_1h7imnhgawchi" : {
+      "type" : "object",
+      "required" : [ "dataBody", "dataHeader" ],
+      "properties" : {
+        "dataHeader" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_dataHeader_1ji4fwgdnyb1f"
+        },
+        "dataBody" : {
+          "description" : "response data header",
+          "$ref" : "#/definitions/_oai_wb_v1_lease_getLeaseHouseLoanAm_dataBody_1iun7dvff5ulz"
+        }
+      }
+    },
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_dataHeader_1ji4fwgdnyb1f" : {
+      "type" : "object",
+      "description" : "response data header"
+    },
+    "_oai_wb_v1_lease_getLeaseHouseLoanAm_dataBody_1iun7dvff5ulz" : {
+      "type" : "object",
+      "properties" : {
+        "RSP_RTCD" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "응답결과코드"
+        },
+        "RSP_ERR_TXT" : {
+          "type" : "string",
+          "example" : "",
+          "description" : "응답오류내용"
+        },
+        "FRCS_AVL_LN_AM" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "예상가능대출금액"
+        },
+        "FRCS_AVL_GDOC_AM" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "예상가능보증서금액"
+        },
+        "FRCS_AVL_GRN_RT" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "예상가능보증비율"
+        },
+        "FRCS_AVL_GRFE_RT" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "예상가능보증료율"
+        },
+        "FRCS_AVL_GRFE" : {
+          "type" : "number",
+          "example" : "",
+          "description" : "예상가능보증료"
+        }
+      },
+      "description" : "response data header"
+    }
+  }
+}
