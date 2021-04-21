@@ -1,21 +1,21 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "UNOAPI Swagger Spec. JSON",
+    "description" : "Wooribank API, Wooribank Swagger Spec. JSON",
     "version" : "1.0.0",
-    "title" : "UNOAPI"
-  },
-  "host" : "",
-  "basePath" : "/",
-  "tags" : [ {
-    "name" : "api-list",
-    "description" : "List of APIs"
-  } ],
+    "title" : "Wooribank API"
+	  },
+	  "host" : "localhost:8080",
+	  "basePath" : "/",
+	  "tags" : [ {
+		"name" : "List of APIs",
+		"description" : ""
+	  } ],
   "paths" : {
     "/oai/wb/v1/lease/getLeaseHouseLoanAm" : {
       "post" : {
-        "tags" : [ "api-list" ],
-        "summary" : "전세자금대출상담신청",
+        "tags" : [ "List of APIs" ],
+        "summary" : "전세자금대출한도조회",
         "operationId" : "_oai_wb_v1_lease_getLeaseHouseLoanAm",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -23,21 +23,13 @@
           "name" : "appkey",
           "in" : "header",
           "description" : "API Key(제휴사키)",
+		  "type" : "string",
           "required" : false
         }, {
           "name" : "authorization",
           "in" : "header",
           "description" : "인증토큰",
-          "required" : false
-        }, {
-          "name" : "itcsno",
-          "in" : "header",
-          "description" : "통합고객번호",
-          "required" : false
-        }, {
-          "name" : "ebnk_utzpe_no",
-          "in" : "header",
-          "description" : "전자뱅킹이용자번호",
+		  "type" : "string",
           "required" : false
         }, {
           "in" : "body",
@@ -175,7 +167,7 @@
         },
         "WRLC_CRNO" : {
           "type" : "string",
-          "example" : "12131123111",
+          "example" : "11111111111",
           "description" : "직장법인등록번호"
         },
         "CHIL_CN" : {
@@ -230,7 +222,7 @@
         },
         "BLD_MNG_NO" : {
           "type" : "string",
-          "example" : "2121112111",
+          "example" : "1111111111",
           "description" : "건물관리번호"
         },
         "OBJT_SQM" : {
@@ -320,7 +312,7 @@
         },
         "RENPE_RSCO_ITCSNO" : {
           "type" : "string",
-          "example" : "12121211121",
+          "example" : "11111111111",
           "description" : "임대인주민법인통합고객번호"
         },
         "GRLMT_PRME_TTMN_DSCD" : {
@@ -369,7 +361,7 @@
       "properties" : {
         "RSP_RTCD" : {
           "type" : "string",
-          "example" : "",
+          "example" : "0",
           "description" : "응답결과코드"
         },
         "RSP_ERR_TXT" : {
@@ -379,27 +371,27 @@
         },
         "FRCS_AVL_LN_AM" : {
           "type" : "number",
-          "example" : "",
+          "example" : "60000000",
           "description" : "예상가능대출금액"
         },
         "FRCS_AVL_GDOC_AM" : {
           "type" : "number",
-          "example" : "",
+          "example" : "0",
           "description" : "예상가능보증서금액"
         },
         "FRCS_AVL_GRN_RT" : {
           "type" : "number",
-          "example" : "",
+          "example" : "0",
           "description" : "예상가능보증비율"
         },
         "FRCS_AVL_GRFE_RT" : {
           "type" : "number",
-          "example" : "",
+          "example" : "0",
           "description" : "예상가능보증료율"
         },
         "FRCS_AVL_GRFE" : {
           "type" : "number",
-          "example" : "",
+          "example" : "0",
           "description" : "예상가능보증료"
         }
       },
